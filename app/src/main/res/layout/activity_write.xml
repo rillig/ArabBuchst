@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".WriteActivity">
+
+    <TextView
+        android:id="@+id/given"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:textSize="56sp" />
+
+    <EditText
+        android:id="@+id/answerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/given"
+        android:layout_alignRight="@+id/given"
+        android:layout_below="@+id/given"
+        android:gravity="right"
+        android:inputType="textNoSuggestions|text"
+        android:textSize="56sp" />
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/given"
+        android:layout_alignRight="@+id/given"
+        android:layout_below="@+id/answerText"
+        android:onClick="onCheckClick"
+        android:text="Prüfen" />
+
+    <Button
+        android:id="@+id/skipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkButton"
+        android:layout_toLeftOf="@+id/checkButton"
+        android:layout_toStartOf="@+id/checkButton"
+        android:onClick="onSkipClick"
+        android:text="Überspringen" />
+
+    <TextView
+        android:id="@+id/wrongLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/answerText"
+        android:text="Falsch"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</RelativeLayout>
