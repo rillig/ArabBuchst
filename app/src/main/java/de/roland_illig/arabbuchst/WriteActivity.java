@@ -1,7 +1,7 @@
 package de.roland_illig.arabbuchst;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Random;
 
-public class WriteActivity extends AppCompatActivity {
+public class WriteActivity extends Activity {
 
     private final List<TrainingData.WordPair> wordPairs = new TrainingData().loadWordPairs();
     private final Random rnd = new Random();
