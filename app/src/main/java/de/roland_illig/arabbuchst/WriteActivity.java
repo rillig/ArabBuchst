@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ public class WriteActivity extends Activity {
     private TextView given;
     private EditText answer;
     private TextView wrong;
+    private int displayMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,8 @@ public class WriteActivity extends Activity {
         do {
             wordPair = wordPairs.get(rnd.nextInt(wordPairs.size()));
         } while (prev == wordPair);
-        given.setText(wordPair.ar);
+        displayMode = 0;
+        updateGiven();
         answer.setText("");
         if (answer.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
@@ -76,11 +79,17 @@ public class WriteActivity extends Activity {
     }
 
     private void onGivenClick() {
-        if (given.getText().toString().equals(wordPair.ar)) {
-            given.setText(wordPair.de);
-        } else {
-            given.setText(wordPair.ar);
-        }
+        displayMode = (displayMode + 1) % 3;
+        updateGiven();
+    }
+
+    private void updateGiven() {
+        given.setText(displayMode == 0
+                ? wordPair.ar
+                : displayMode == 1
+                ? Transliterator.arlat(wordPair.ar)
+                : wordPair.de);
+        given.setGravity(displayMode == 1 ? Gravity.CENTER_HORIZONTAL : Gravity.NO_GRAVITY);
     }
 
     private void onAnswerChanged() {
