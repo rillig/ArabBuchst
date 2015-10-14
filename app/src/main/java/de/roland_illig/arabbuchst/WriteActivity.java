@@ -21,6 +21,7 @@ public class WriteActivity extends Activity {
     private TextView given;
     private EditText answer;
     private TextView wrong;
+    private TextView correct;
     private int displayMode;
 
     @Override
@@ -30,6 +31,7 @@ public class WriteActivity extends Activity {
         given = (TextView) findViewById(R.id.given);
         answer = (EditText) findViewById(R.id.answerText);
         wrong = (TextView) findViewById(R.id.wrongLabel);
+        correct = (TextView) findViewById(R.id.correctLabel);
         given.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,11 +56,14 @@ public class WriteActivity extends Activity {
     }
 
     public void onCheckClick(View view) {
-        if (wordPair.ar.equals(answer.getText().toString())) {
+        String reVowels = "[\u0618\0619\u061A\u064E\u064F\u0650]";
+        String arNoVowels = wordPair.ar.replaceAll(reVowels, "");
+        String answerNoVowels = answer.getText().toString().replaceAll(reVowels, "");
+        boolean isCorrect = arNoVowels.equals(answerNoVowels);
+        if (isCorrect)
             nextWord();
-        } else {
-            wrong.setVisibility(View.VISIBLE);
-        }
+        correct.setVisibility(isCorrect ? View.VISIBLE : View.INVISIBLE);
+        wrong.setVisibility(isCorrect ? View.INVISIBLE : View.VISIBLE);
     }
 
     public void onSkipClick(View view) {
@@ -93,6 +98,7 @@ public class WriteActivity extends Activity {
     }
 
     private void onAnswerChanged() {
+        correct.setVisibility(View.INVISIBLE);
         wrong.setVisibility(View.INVISIBLE);
     }
 }

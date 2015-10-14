@@ -12,6 +12,21 @@ public class Transliterator {
 
     private static String arlat(char arabic) {
         switch (arabic) {
+            case '\u060C':
+                return ",";
+            case '\u0618':
+            case '\u064E':
+                return "a";
+            case '\u0619':
+            case '\u063F':
+                return "u";
+            case '\u061A':
+            case '\u0650':
+                return "i";
+            case '\u061B':
+                return ";";
+            case '\u061F':
+                return "?";
             case '\u0621':
                 return "ʼ";
             case '\u0623':

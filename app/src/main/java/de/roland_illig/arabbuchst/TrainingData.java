@@ -9,17 +9,41 @@ public class TrainingData {
     public List<WordPair> loadWordPairs() {
         List<String> pairs = Arrays.asList(
                 "قاموس=Wörterbuch",
-                "آلو=Hallo (am Telefon)",
+                "أَلُو=Hallo (am Telefon)",
                 "مساء=Abend",
                 "حصان=Pferd",
                 "ألمانيا=Deutschland",
                 "مصر=Ägypten",
-                "ارنب=Hase",
                 "بيت=Haus",
                 "خمل=Kamel",
                 "مكتب=Büro/Schreibtisch",
-                "ياسمين=Yasmin"
-        );
+                "أُرْنَب=Hase",
+                "أَسَد=Löwe",
+                "بيْت=Haus",
+                "تِين=Feigen",
+                "جَمَل=Kamel",
+                "حَليْب=Milch",
+                "خُبْز=Brot",
+                "دِبك=Hahn",
+                "ذَهت=Gold",
+                "رَاديُو=Radio",
+                "زَيْتُون=Olive",
+                "سَمَك=Fisch",
+                "شَمْس=Sonne",
+                "صَابُون=Seife",
+                "ضَبَاب=Nebel",
+                "طَالِب=Student",
+                "ظَرْف=Briefumschlag",
+                "عِيد=Fest",
+                "غَالِي=teuer",
+                "فِيل=Elefant",
+                "قَلَم=Stift",
+                "كِتَاب=Buch",
+                "لِبِيَا=Libyen",
+                "مَكْتَب=Büro/Schreibtisch",
+                "نُور=Licht",
+                "هَال=Kardamom",
+                "يَسْمِين=Jasmin");
         List<WordPair> result = new ArrayList<>();
         for (String pair : pairs) {
             String[] parts = pair.split("=");
