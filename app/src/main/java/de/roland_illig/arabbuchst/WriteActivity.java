@@ -56,7 +56,7 @@ public class WriteActivity extends Activity {
     }
 
     public void onCheckClick(View view) {
-        String reVowels = "[\u0618\0619\u061A\u064E\u064F\u0650]";
+        String reVowels = "[\u0618\u0619\u061A\u064E\u064F\u0650\u0652]";
         String arNoVowels = wordPair.ar.replaceAll(reVowels, "");
         String answerNoVowels = answer.getText().toString().replaceAll(reVowels, "");
         boolean isCorrect = arNoVowels.equals(answerNoVowels);

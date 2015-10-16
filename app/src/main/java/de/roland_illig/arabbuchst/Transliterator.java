@@ -18,11 +18,13 @@ public class Transliterator {
             case '\u064E':
                 return "a";
             case '\u0619':
-            case '\u063F':
+            case '\u064F':
                 return "u";
             case '\u061A':
             case '\u0650':
                 return "i";
+            case '\u0652':
+                return "";
             case '\u061B':
                 return ";";
             case '\u061F':
@@ -30,7 +32,7 @@ public class Transliterator {
             case '\u0621':
                 return "ʼ";
             case '\u0623':
-                return "ʼa";
+                return "ʼā";
             case '\u0627':
                 return "ā";
             case '\u0628':
@@ -68,7 +70,7 @@ public class Transliterator {
             case '\u0639':
                 return "ʻ";
             case '\u063A':
-                return "gh";
+                return "g͜h";
             case '\u0641':
                 return "f";
             case '\u0642':
@@ -84,7 +86,7 @@ public class Transliterator {
             case '\u0647':
                 return "h";
             case '\u0648':
-                return "u";
+                return "ū";
             case '\u064A':
                 return "y";
             case '\u0622':
