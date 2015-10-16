@@ -15,7 +15,6 @@ public class TrainingData {
                 "ألمانيا=Deutschland",
                 "مصر=Ägypten",
                 "بيت=Haus",
-                "خمل=Kamel",
                 "مكتب=Büro/Schreibtisch",
                 "أُرْنَب=Hase",
                 "أَسَد=Löwe",
@@ -25,7 +24,7 @@ public class TrainingData {
                 "حَليْب=Milch",
                 "خُبْز=Brot",
                 "دِبك=Hahn",
-                "ذَهت=Gold",
+                "ذَهب=Gold",
                 "رَاديُو=Radio",
                 "زَيْتُون=Olive",
                 "سَمَك=Fisch",
@@ -39,11 +38,11 @@ public class TrainingData {
                 "فِيل=Elefant",
                 "قَلَم=Stift",
                 "كِتَاب=Buch",
-                "لِبِيَا=Libyen",
+                "لِيبِيا=Libyen",
                 "مَكْتَب=Büro/Schreibtisch",
                 "نُور=Licht",
                 "هَال=Kardamom",
-                "يَسْمِين=Jasmin");
+                "يَاسْمِين=Jasmin");
         List<WordPair> result = new ArrayList<>();
         for (String pair : pairs) {
             String[] parts = pair.split("=");
