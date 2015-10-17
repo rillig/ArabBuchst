@@ -14,7 +14,7 @@ public class TrainingData {
                 "أَلمَانْيَا=Deutschland",
                 "مِصْر=Ägypten",
                 "بَيْت=Haus",
-                "مَكْتْب=Büro/Schreibtisch",
+                "مَكْتَب=Büro/Schreibtisch",
                 "أرْنَب=Hase",
                 "أَسَد=Löwe",
                 "بيْت=Haus",
