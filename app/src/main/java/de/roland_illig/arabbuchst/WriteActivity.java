@@ -92,7 +92,7 @@ public class WriteActivity extends Activity {
         given.setText(displayMode == 0
                 ? wordPair.ar
                 : displayMode == 1
-                ? Transliterator.arlat(wordPair.ar)
+                ? Transliterator.arabicToLatin(wordPair.ar)
                 : wordPair.de);
         given.setGravity(displayMode == 1 ? Gravity.CENTER_HORIZONTAL : Gravity.NO_GRAVITY);
     }

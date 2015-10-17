@@ -2,15 +2,18 @@ package de.roland_illig.arabbuchst;
 
 public class Transliterator {
 
-    public static String arlat(String arabic) {
+    /**
+     * This transliteration is not meant to be perfect or follow existing standards to the letter.
+     */
+    public static String arabicToLatin(String arabic) {
         StringBuilder sb = new StringBuilder();
         for (char c : arabic.toCharArray()) {
-            sb.append(arlat(c));
+            sb.append(arabicToLatin(c));
         }
         return sb.toString().replace("āa","ā").replace("aā","ā").replace("uū","ū").replace("iy","y");
     }
 
-    private static String arlat(char arabic) {
+    private static String arabicToLatin(char arabic) {
         switch (arabic) {
             case '،':
                 return ",";
