@@ -3,7 +3,9 @@ package de.roland_illig.arabbuchst;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.SpannableString;
 import android.text.TextWatcher;
+import android.text.style.BackgroundColorSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -56,14 +58,33 @@ public class WriteActivity extends Activity {
     }
 
     public void onCheckClick(View view) {
-        String reVowels = "[\u0618\u0619\u061A\u064E\u064F\u0650\u0652]";
-        String arNoVowels = wordPair.ar.replaceAll(reVowels, "");
-        String answerNoVowels = answer.getText().toString().replaceAll(reVowels, "");
-        boolean isCorrect = arNoVowels.equals(answerNoVowels);
-        if (isCorrect)
+        String arWithoutTashkil = ArStringUtils.withoutTashkil(wordPair.ar);
+        String answerWithoutTashkil = ArStringUtils.withoutTashkil(answer.getText().toString());
+        if (arWithoutTashkil.equals(answerWithoutTashkil)) {
             nextWord();
-        correct.setVisibility(isCorrect ? View.VISIBLE : View.INVISIBLE);
-        wrong.setVisibility(isCorrect ? View.INVISIBLE : View.VISIBLE);
+            correct.setVisibility(View.VISIBLE);
+            wrong.setVisibility(View.INVISIBLE);
+        } else {
+            markWrongPart();
+            correct.setVisibility(View.INVISIBLE);
+            wrong.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void markWrongPart() {
+        String ar = wordPair.ar;
+        int[] startEnd = ArStringUtils.determineWrongPart(ar, answer.getText().toString());
+        int start = startEnd[0];
+        int end = startEnd[1];
+        if (start == end) {
+            SpannableString ss = new SpannableString(ar.substring(0, start) + "٭" + ar.substring(end));
+            ss.setSpan(new BackgroundColorSpan(0x80FF0000), start, end + 1, 0);
+            given.setText(ss);
+        } else {
+            SpannableString ss = new SpannableString(ar);
+            ss.setSpan(new BackgroundColorSpan(0x80FF0000), start, end, 0);
+            given.setText(ss);
+        }
     }
 
     public void onSkipClick(View view) {
