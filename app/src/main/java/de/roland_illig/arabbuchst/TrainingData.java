@@ -40,7 +40,13 @@ public class TrainingData {
                 "مَكْتَب=Büro/Schreibtisch",
                 "نُور=Licht",
                 "هَال=Kardamom",
-                "يَاسْمِين=Jasmin");
+                "يَاسْمِين=Jasmin",
+                "بَيْرُوت=Beirut",
+                "اِثْنَان=zwei",
+                "عِشْرُونَ=zwanzig",
+                "ضَيِف=Gast",
+                "بَغْدَاد‎=Bagdad",
+                "مِلْح=Salz");
         List<WordPair> result = new ArrayList<>();
         for (String pair : pairs) {
             String[] parts = pair.split("=");
