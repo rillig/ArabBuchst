@@ -21,4 +21,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'org.testng:testng:6.9.8'
+    testCompile 'org.mockito:mockito-all:2.0.2-beta'
 }

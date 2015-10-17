@@ -7,13 +7,18 @@ public class Transliterator {
         for (char c : arabic.toCharArray()) {
             sb.append(arlat(c));
         }
-        return sb.toString();
+        return sb.toString().replace("āa","ā").replace("aā","ā").replace("uū","ū").replace("iy","y");
     }
 
     private static String arlat(char arabic) {
         switch (arabic) {
-            case '\u060C':
+            case '،':
                 return ",";
+            case '\u061B':
+                return ";";
+            case '\u061F':
+                return "?";
+
             case '\u0618':
             case '\u064E':
                 return "a";
@@ -25,76 +30,73 @@ public class Transliterator {
                 return "i";
             case '\u0652':
                 return "";
-            case '\u061B':
-                return ";";
-            case '\u061F':
-                return "?";
-            case '\u0621':
-                return "ʼ";
-            case '\u0623':
+
+            case 'ء':
+                return "ʾ";
+            case 'آ':
                 return "ʼā";
-            case '\u0627':
+            case 'أ':
+                return "ʾā";
+            case 'ا':
                 return "ā";
-            case '\u0628':
+            case 'ب':
                 return "b";
-            case '\u062A':
+            case 'ة':
+                return "h";
+            case 'ت':
                 return "t";
-            case '\u062B':
+            case 'ث':
                 return "th";
-            case '\u062C':
+            case 'ج':
                 return "j";
-            case '\u062D':
+            case 'ح':
                 return "ḥ";
-            case '\u062E':
+            case 'خ':
                 return "kh";
-            case '\u062F':
+            case 'د':
                 return "d";
-            case '\u0630':
+            case 'ذ':
                 return "dh";
-            case '\u0631':
+            case 'ر':
                 return "r";
-            case '\u0632':
+            case 'ز':
                 return "z";
-            case '\u0633':
+            case 'س':
                 return "s";
-            case '\u0634':
+            case 'ش':
                 return "sh";
-            case '\u0635':
+            case 'ص':
                 return "ṣ";
-            case '\u0636':
+            case 'ض':
                 return "ḍ";
-            case '\u0637':
+            case 'ط':
                 return "ṭ";
-            case '\u0638':
+            case 'ظ':
                 return "ẓ";
-            case '\u0639':
-                return "ʻ";
-            case '\u063A':
-                return "g͜h";
-            case '\u0641':
+            case 'ع':
+                return "ʿ";
+            case 'غ':
+                return "ġ";
+            case 'ف':
                 return "f";
-            case '\u0642':
+            case 'ق':
                 return "q";
-            case '\u0643':
+            case 'ك':
                 return "k";
-            case '\u0644':
+            case 'ل':
                 return "l";
-            case '\u0645':
+            case 'م':
                 return "m";
-            case '\u0646':
+            case 'ن':
                 return "n";
-            case '\u0647':
+            case 'ه':
                 return "h";
-            case '\u0648':
+            case 'و':
                 return "ū";
-            case '\u064A':
-                return "y";
-            case '\u0622':
-                return "ʼā";
-            case '\u0629':
-                return "h";
-            case '\u0649':
+            case 'ى':
                 return "á";
+            case 'ي':
+                return "y";
         }
         return String.valueOf(arabic);
     }
