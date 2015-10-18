@@ -39,7 +39,7 @@ public class TransliteratorTest {
         assertNext("jamal");
         assertNext("ḥalyb");
         assertNext("khubz");
-        assertNext("dibk");
+        assertNext("dyk");
         assertNext("dhahab");
         assertNext("rādyū");
         assertNext("zaytūn");
