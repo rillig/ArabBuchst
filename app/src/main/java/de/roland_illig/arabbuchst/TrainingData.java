@@ -45,7 +45,7 @@ public class TrainingData {
                 "اِثْنَان=zwei",
                 "عِشْرُونَ=zwanzig",
                 "ضَيِف=Gast",
-                "بَغْدَاد‎=Bagdad",
+                "بَغْدَاد=Bagdad",
                 "مِلْح=Salz");
         List<WordPair> result = new ArrayList<>();
         for (String pair : pairs) {
